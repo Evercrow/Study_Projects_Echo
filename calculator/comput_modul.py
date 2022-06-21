@@ -33,6 +33,8 @@ def format_in_fract_list(string_arg):       #функция конвертаци
     
 def calc_mod(string_arg): 
     from fractions import Fraction
+    if string_arg == '':
+        return ''
     list_arg = format_in_fract_list(string_arg)
     set = {'+', '-'}
     prom_result_list = []
