@@ -4,12 +4,6 @@ def userTerminal():
         print(cs.Fore.GREEN)
         user_req = input('Введите ОДНОЙ СТРОКОЙ выражение, значение которого нужно найти, и нажмите клавишу "ввод":\n')
         if bool(user_req) == False: return False
-        user_req = user_req.replace(' ','')
-        user_req = user_req.replace('--','+')
-        user_req = user_req.replace('+-','-')
-        user_req = user_req.replace('-+','-')
-        user_req = user_req.replace('++','+')
-        user_req = user_req.replace('ii','i*i')
         checked_str = InputValidityTelebot(user_req)
         if checked_str == 0: break
         else : print(cs.Fore.RED,checked_str[1])
@@ -23,6 +17,12 @@ def userTerminal():
 def InputValidityTelebot(user_req :str):
     validset = {'0','1','2','3','4','5','6','7','8','9','*',':','+','-','i','/','_','^'}
     check_str =''
+    user_req = user_req.replace(' ','')
+    user_req = user_req.replace('--','+')
+    user_req = user_req.replace('+-','-')
+    user_req = user_req.replace('-+','-')
+    user_req = user_req.replace('++','+')
+    user_req = user_req.replace('ii','i*i')
 #code 0 : "Выражение валидно"
 #code 1 : "невалидный символ"
 #code 2 : "двойной символ матоперации"
