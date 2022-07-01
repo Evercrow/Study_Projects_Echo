@@ -1,5 +1,7 @@
 
 def separator(input_string):
+    if input_string == '':
+        return ''
     temp = ''
     result=[]
     set_before_minus = {':','*','^',''}
